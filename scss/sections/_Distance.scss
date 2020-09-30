@@ -1,0 +1,261 @@
+#yadea-xmen-page {
+    #yadea-xmen-distance {
+        height: 61.9vw;
+        background-color: #3e038f;
+        .road-images-bg {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            .road-bg-img {
+                position: relative;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                &.road-night {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    &.anim {
+                        animation: opacityChange 14s linear infinite;
+                    }
+                }
+            }
+        }
+        .bikes-holder {
+            position: absolute;
+            z-index: 1;
+            width: 44%;
+            top: 43.5%;
+            left: 27.5%;
+        }
+        .main-content {
+            padding-top: 3vw;
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            * {
+                color: $white;
+            }
+            &.anim {
+                * {
+                    animation: colorChange 14s linear infinite;
+                }
+            }
+        }
+        .distance-tags-holder {
+            z-index: 3;
+            position: absolute;
+            width: 26.8%;
+            left: 36.6%;
+            bottom: 3%;
+            display: flex;
+            justify-content: space-between;
+            .distance-tag-item {
+                cursor: pointer;
+                position: relative;
+                border-radius: 15px;
+                overflow: hidden;
+                transition: all ease-in 200ms;
+                &:hover {
+                    transition: all ease-out 200ms;
+                    box-shadow: 0 0 6px rgba($black, 0.6);
+                }
+                .context {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    .bike-name {
+                        font-weight: 700;
+                        font-size: 24px;
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+    }
+    /* === RESPONSIVE === */
+    // Screen 1680px and Bellow
+    @media #{$information-md-screen} {
+        #yadea-xmen-distance {
+            .distance-tags-holder {
+                .distance-tag-item {
+                    border-radius: 13px;
+                    flex-basis: 47%;
+                    .context {
+                        .bike-name {
+                            font-size: 22px;
+                            margin-bottom: 7px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Screen 1440 and bellow
+    @media #{$information-sm-screen} {
+        #yadea-xmen-distance {
+            .distance-tags-holder {
+                .distance-tag-item {
+                    border-radius: 10px;
+                    .context {
+                        font-size: 14px;
+                        .bike-name {
+                            font-size: 18px;
+                            margin-bottom: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Screen 1280 and bellow
+    @media #{$information-sm-laptop} {
+        #yadea-xmen-distance {
+            .main-content {
+                padding-top: 40px;
+            }
+            .distance-tags-holder {
+                .distance-tag-item {
+                    border-radius: 9px;
+                    .context {
+                        font-size: 13px;
+                        .bike-name {
+                            font-size: 17px;
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Screen 1080 and bellow
+    @media #{$information-lg-tablet} {
+        #yadea-xmen-distance {
+            height: 181.25vw;
+            .bikes-holder {
+                position: absolute;
+                width: 100%;
+                top: 48.5%;
+                left: 0;
+            }
+            .main-content {
+                padding: 11vw 30px 0;
+            }
+            .distance-tags-holder {
+                width: 100%;
+                left: 0;
+                bottom: 4%;
+                padding: 0 9%;
+                .distance-tag-item {
+                    border-radius: 15px;
+                    .context {
+                        .bike-name {
+                            font-size: 22px;
+                            margin-bottom: 7px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Screen 480 and bellow
+    @media #{$information-phone} {
+        #yadea-xmen-distance {
+            .main-content {
+                padding: 9vw 15px 0;
+            }
+            .distance-tags-holder {
+                width: 100%;
+                left: 0;
+                bottom: 5%;
+                padding: 0 7%;
+                .distance-tag-item {
+                    border-radius: 12px;
+                    .context {
+                        .bike-name {
+                            font-size: 18px;
+                            margin-bottom: 2px;
+                        }
+                        .bike-distance {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Screen 480 and bellow
+    @media #{$information-sm-phone} {
+        #yadea-xmen-distance {
+            .main-content {
+                padding: 8vw 13px 0;
+            }
+            .distance-tags-holder {
+                width: 100%;
+                left: 0;
+                bottom: 5%;
+                padding: 0 6%;
+                .distance-tag-item {
+                    border-radius: 10px;
+                    .context {
+                        .bike-name {
+                            font-size: 16px;
+                            margin-bottom: 2px;
+                        }
+                        .bike-distance {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes opacityChange {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    20%,
+    80% {
+        opacity: 0.75;
+    }
+    30%,
+    50%,
+    70% {
+        opacity: 0;
+    }
+}
+
+@keyframes colorChange {
+    0%,
+    100% {
+        color: $white;
+    }
+    20%,
+    80% {
+        color: #ccc;
+    }
+    30%,
+    50%,
+    70% {
+        color: #333;
+    }
+}

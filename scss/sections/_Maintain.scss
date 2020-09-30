@@ -1,0 +1,215 @@
+#yadea-xmen-page {
+    #yadea-xmen-maintain {
+        height: 55vw;
+        background-color: #420e9c;
+        .bg-holder {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+        .main-content {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            padding-top: 63px;
+            .maintain-type {
+                display: flex;
+                margin: auto;
+                width: 660px;
+                margin-top: 28px;
+                justify-content: space-between;
+                .maintain-item {
+                    display: flex;
+                    width: 47%;
+                    height: 100%;
+                    align-items: center;
+                    .ico {
+                        padding: 0 18px;
+                        img {
+                            width: 70px;
+                            height: auto;
+                        }
+                    }
+                    .context {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        p {
+                            margin: 0;
+                            text-align: left;
+                            font-size: 18px;
+                            white-space: nowrap;
+                        }
+                        .label {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* === RESPONSIVE === */
+    // Screen 1680 and bellow
+    @media #{$information-md-screen} {
+        #yadea-xmen-maintain {
+            .main-content {
+                padding-top: 3.25vw;
+                .maintain-type {
+                    width: 600px;
+                    margin-top: 28px;
+                    .maintain-item {
+                        width: 47%;
+                        height: 100%;
+                        .ico {
+                            padding: 0 15px;
+                            img {
+                                width: 60px;
+                            }
+                        }
+                        .context {
+                            p {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Screen 1440 and bellow
+    @media #{$information-sm-screen} {
+        #yadea-xmen-maintain {
+            .main-content {
+                .maintain-type {
+                    width: 540px;
+                    margin-top: 22px;
+                    .maintain-item {
+                        width: 47%;
+                        height: 100%;
+                        .ico {
+                            padding: 0 13px;
+                            img {
+                                width: 50px;
+                            }
+                        }
+                        .context {
+                            p {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Screen 1280 ang bellow
+    @media #{$information-sm-laptop} {
+        #yadea-xmen-maintain {
+            .main-content {
+                padding-top: 3vw;
+                .maintain-type {
+                    width: 500px;
+                    margin-top: 22px;
+                    .maintain-item {
+                        width: 47%;
+                        height: 100%;
+                        .ico {
+                            padding: 0 11px;
+                            img {
+                                width: 44px;
+                            }
+                        }
+                        .context {
+                            p {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // Screen 1080 and bellow
+    @media #{$information-lg-tablet} {
+        #yadea-xmen-maintain {
+            height: 169.5vw;
+            .main-content {
+                padding: 10vw 30px;
+                .maintain-type {
+                    width: 80%;
+                    margin-top: 20px;
+                    .maintain-item {
+                        display: flex;
+                        width: 47%;
+                        height: 100%;
+                        align-items: center;
+                        .ico {
+                            padding: 0 13px;
+                            img {
+                                width: 44px;
+                            }
+                        }
+                        .context {
+                            p {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-phone} {
+        #yadea-xmen-maintain {
+            .main-content {
+                padding: 10vw 20px;
+                .maintain-type {
+                    width: 90%;
+                    margin-top: 20px;
+                    .maintain-item {
+                        width: 47%;
+                        .ico {
+                            padding: 0 8px;
+                            img {
+                                width: 30px;
+                            }
+                        }
+                        .context {
+                            p {
+                                font-size: 12px;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-sm-phone} {
+        #yadea-xmen-maintain {
+            .main-content {
+                padding: 10vw 13px;
+                .maintain-type {
+                    width: 95%;
+                    margin-top: 20px;
+                    .maintain-item {
+                        width: 47%;
+                        .ico {
+                            padding: 0 8px;
+                            img {
+                                width: 24px;
+                            }
+                        }
+                        .context {
+                            p {
+                                font-size: 11px;
+                                line-height: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

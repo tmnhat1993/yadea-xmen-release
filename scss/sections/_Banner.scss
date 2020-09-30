@@ -1,0 +1,212 @@
+#yadea-xmen-page {
+    .section-banner {
+        background-color: #060f46;
+        width: 100%;
+        // Main Background
+        .bg-holder {
+            width: 100%;
+            position: relative;
+        }
+        // Main Content
+        .main-content {
+            position: absolute;
+            width: 30%;
+            top: 83.5%;
+            left: 57%;
+            text-align: center;
+            // Buy Now Button
+            .buynow-btn {
+                background-color: $main-color;
+                border-radius: 14px;
+                border: 2px solid $white;
+                line-height: 1.9;
+                padding: 0 25px;
+                font-size: 26px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                color: $white;
+                position: relative;
+                overflow: hidden;
+                transition: all cubic-bezier(0.48, 0.19, 0.99, 0.66) 220ms;
+                .cover {
+                    position: absolute;
+                    width: 102%;
+                    height: 102%;
+                    top: -1%;
+                    left: -1%;
+                    background-color: $white;
+                    -webkit-transform: scaleX(0);
+                    transform: scaleX(0);
+                    z-index: 0;
+                    transition: all cubic-bezier(0.48, 0.19, 0.99, 0.66) 220ms;
+                }
+                .arrow-ico {
+                    position: relative;
+                    z-index: 2;
+                    margin-left: 5px;
+                    svg {
+                        height: 15px;
+                        path {
+                            transition: all cubic-bezier(0.48, 0.19, 0.99, 0.66) 220ms;
+                            fill: $white;
+                        }
+                    }
+                }
+                .context {
+                    position: relative;
+                }
+                &:hover {
+                    color: $main-color;
+                    transition: all cubic-bezier(0.2, 0.42, 0.55, 0.99) 300ms;
+                    border-color: $main-color;
+                    .cover {
+                        transition: all cubic-bezier(0.2, 0.42, 0.55, 0.99) 300ms;
+                        -webkit-transform: scaleX(1);
+                        transform: scaleX(1);
+                    }
+                    .arrow-ico {
+                        svg {
+                            path {
+                                fill: $main-color;
+                                transition: all cubic-bezier(0.2, 0.42, 0.55, 0.99) 300ms;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* === RESPONSIVE === */
+    @media #{$information-md-screen} {
+        .section-banner {
+            width: 1680px;
+            margin-left: calc((100% - 1680px) / 2);
+            // Main Content
+            .main-content {
+                // Buy Now Button
+                .buynow-btn {
+                    border-radius: 12px;
+                    border: 2px solid $white;
+                    padding: 0 23px;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    @media #{$information-screen} {
+        .section-banner {
+            width: 1920px;
+            margin-left: calc((100% - 1920px) / 2);
+        }
+    }
+    @media #{$information-sm-screen} {
+        .section-banner {
+            width: 1440px;
+            margin-left: calc((100% - 1440px) / 2);
+            // Main Content
+            .main-content {
+                // Buy Now Button
+                .buynow-btn {
+                    border-radius: 10px;
+                    border: 2px solid $white;
+                    padding: 0 21px;
+                    font-size: 22px;
+                    .arrow-ico {
+                        margin-left: 3px;
+                        svg {
+                            height: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-sm-laptop} {
+        .section-banner {
+            width: 100%;
+            margin-left: 0;
+            // Main Content
+            .main-content {
+                // Buy Now Button
+                .buynow-btn {
+                    border-radius: 8px;
+                    border: 2px solid $white;
+                    padding: 0 18px;
+                    font-size: 20px;
+                    .fa {
+                        margin-left: 7px;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+    // Tablet
+    @media #{$information-lg-tablet} {
+        .section-banner {
+            margin-left: 0;
+            width: 100%;
+            // Main Content
+            .main-content {
+                width: 100%;
+                top: auto;
+                left: 0;
+                bottom: 5%;
+                // Buy Now Button
+                .buynow-btn {
+                    border-radius: 12px;
+                    padding: 0 20px;
+                    font-size: 24px;
+                    .arrow-ico {
+                        margin-left: 3px;
+                        svg {
+                            height: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-phone} {
+        .section-banner {
+            // Main Content
+            .main-content {
+                bottom: 5%;
+                // Buy Now Button
+                .buynow-btn {
+                    border-radius: 8px;
+                    padding: 0 15px;
+                    font-size: 16px;
+                    .arrow-ico {
+                        margin-left: 3px;
+                        svg {
+                            height: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-sm-phone} {
+        .section-banner {
+            // Main Content
+            .main-content {
+                bottom: 5%;
+                // Buy Now Button
+                .buynow-btn {
+                    border-radius: 6px;
+                    padding: 0 13px;
+                    font-size: 15px;
+                    .arrow-ico {
+                        margin-left: 3px;
+                        svg {
+                            height: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

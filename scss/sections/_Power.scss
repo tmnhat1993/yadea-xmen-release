@@ -1,0 +1,524 @@
+    #yadea-xmen-page {
+        #yadea-xmen-power-smartkey {
+            position: relative;
+            height: 161.4vw;
+            background-color: #0f2467;
+            // Sub Section Common Styling
+            .sub-section {
+                position: absolute;
+                width: 100%;
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            // Individual Section Styling
+            // YADEA XMEN POWER
+            #yadea-xmen-power {
+                height: 40vw;
+                padding-top: 78px;
+                top: 0;
+            }
+            // YADEA XMEN FEATURE
+            #yadea-xmen-features {
+                height: 27.3%;
+                top: 36.3%;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .features-name-list,
+                .feature-description-list,
+                .feature-images-list {
+                    flex-shrink: 0;
+                    width: 1280px;
+                }
+                // Feature Top Name List
+                .features-name-list {
+                    height: 7%;
+                    .feature-names {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        color: $white;
+                        position: relative;
+                        display: flex;
+                        .feature-item {
+                            width: 16.66667%;
+                            flex-basis: 16.6667%;
+                            text-align: center;
+                            line-height: 2.75;
+                            font-size: 24px;
+                            color: rgba($white, 0.7);
+                            cursor: pointer;
+                            font-weight: 300;
+                            &.active {
+                                color: $white;
+                                font-weight: 600;
+                            }
+                        }
+                        .decor-underline {
+                            position: absolute;
+                            bottom: 0;
+                            height: 2px;
+                            width: 100%;
+                            background-color: rgba($white, 0.2);
+                            left: 0;
+                            .decor-line {
+                                height: 2px;
+                                position: absolute;
+                                top: 0;
+                                width: 16.6667%;
+                                background-color: $white;
+                                transition: all cubic-bezier(0.26, 0.82, 0.51, 1) 350ms;
+                            }
+                            &.active-anti-shock {
+                                .decor-line {
+                                    left: 0;
+                                }
+                            }
+                            &.active-bike-frame {
+                                .decor-line {
+                                    left: 16.6667%;
+                                }
+                            }
+                            &.active-bike-under {
+                                .decor-line {
+                                    left: 33.3334%;
+                                }
+                            }
+                            &.active-water-resistant {
+                                .decor-line {
+                                    left: 50%;
+                                }
+                            }
+                            &.active-bike-engine {
+                                .decor-line {
+                                    left: 66.6668%;
+                                }
+                            }
+                            &.active-bike-wheel {
+                                .decor-line {
+                                    left: 83.3335%;
+                                }
+                            }
+                        }
+                    }
+                }
+                // Feature Description
+                .feature-description-list {
+                    height: 22%;
+                    flex-basis: 22%;
+                    .description-list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        .description-item {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            padding-bottom: 1.5%;
+                            // Original State
+                            visibility: hidden;
+                            opacity: 0;
+                            -webkit-transform: translateY(5px);
+                            transform: translateY(5px);
+                            transition: all ease-in 150ms;
+                            &.active {
+                                opacity: 1;
+                                visibility: visible;
+                                transition: 375ms 100ms ease-out;
+                                -webkit-transform: translateY(0);
+                                transform: translateY(0);
+                            }
+                            .description-title {
+                                font-size: 28px;
+                                font-weight: 600;
+                                margin: 0 0 18px;
+                            }
+                            .description-desc {
+                                font-size: 18px;
+                                margin: 0;
+                                line-height: 26px;
+                            }
+                        }
+                    }
+                }
+                // Feature Image List
+                .feature-images-list {
+                    height: 71%;
+                    .feature-images {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $white;
+                        overflow: hidden;
+                        margin: 0;
+                        list-style: none;
+                        padding: 0;
+                        .image-item {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            // original state
+                            opacity: 0;
+                            visibility: hidden;
+                            -webkit-transform: scale(1.1);
+                            transform: scale(1.1);
+                            transition: all ease-in 200ms;
+                            &.active {
+                                opacity: 1;
+                                visibility: visible;
+                                -webkit-transform: scale(1);
+                                transform: scale(1);
+                                transition: 425ms 100ms ease-out;
+                            }
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /* === RESPONSIVE === */
+        @media #{$information-screen} {
+            #yadea-xmen-power-smartkey {
+                #yadea-xmen-power {
+                    height: 20%;
+                    padding-top: 68px;
+                    top: 0;
+                }
+            }
+        }
+        @media #{$information-md-screen} {
+            #yadea-xmen-power-smartkey {
+                #yadea-xmen-power {
+                    padding-top: 60px;
+                }
+                // YADEA XMEN FEATURE
+                #yadea-xmen-features {
+                    .features-name-list,
+                    .feature-description-list,
+                    .feature-images-list {
+                        flex-shrink: 0;
+                        width: 1120px;
+                    }
+                    // Feature Top Name List
+                    .features-name-list {
+                        height: 7%;
+                        .feature-names {
+                            .feature-item {
+                                font-size: 22px;
+                            }
+                        }
+                    }
+                    // Feature Description
+                    .feature-description-list {
+                        .description-list {
+                            .description-item {
+                                .description-title {
+                                    font-size: 24px;
+                                    margin: 0 0 14px;
+                                }
+                                .description-desc {
+                                    font-size: 16px;
+                                    line-height: 22px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media #{$information-sm-screen} {
+            #yadea-xmen-power-smartkey {
+                #yadea-xmen-power {
+                    padding-top: 42px;
+                }
+                // YADEA XMEN FEATURE
+                #yadea-xmen-features {
+                    .features-name-list,
+                    .feature-description-list,
+                    .feature-images-list {
+                        flex-shrink: 0;
+                        width: 880px;
+                    }
+                    // Feature Top Name List
+                    .features-name-list {
+                        height: 9%;
+                        .feature-names {
+                            .feature-item {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                    // Feature Description
+                    .feature-description-list {
+                        height: 20%;
+                        flex-basis: 20%;
+                        .description-list {
+                            .description-item {
+                                padding-bottom: 0;
+                                .description-title {
+                                    font-size: 18px;
+                                    margin: 0 0 10px;
+                                }
+                                .description-desc {
+                                    font-size: 13px;
+                                    line-height: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //Screen 1080 and bellow
+        @media #{$information-lg-tablet} {
+            #yadea-xmen-power-smartkey {
+                height: 508vw;
+                // Individual Section Styling
+                // YADEA XMEN POWER
+                #yadea-xmen-power {
+                    height: 40vw;
+                    padding-top: 11vw;
+                    top: 0;
+                    .main-content {
+                        padding: 0 30px;
+                    }
+                }
+                // YADEA XMEN FEATURES
+                #yadea-xmen-features {
+                    height: 32.581967213%;
+                    top: 33.5%;
+                    width: 100%;
+                    .features-name-list,
+                    .feature-description-list,
+                    .feature-images-list {
+                        flex-shrink: 0;
+                        width: 100%;
+                    }
+                    .features-name-list {
+                        align-items: center;
+                        display: flex;
+                        position: relative;
+                        padding-left: 10vw;
+                        .left-arrow {
+                            height: 5vw;
+                            position: absolute;
+                            left: 3.5vw;
+                            top: 32.5%;
+                            svg {
+                                height: 100%;
+                                path {
+                                    fill: #fff;
+                                }
+                            }
+                        }
+                        .feature-names {
+                            width: 100%;
+                            display: block;
+                            white-space: nowrap;
+                            overflow-x: auto;
+                            .feature-item {
+                                display: inline-block;
+                                width: 35vw;
+                                font-size: 28px;
+                            }
+                            .decor-underline {
+                                width: 210vw;
+                                .decor-line {
+                                    height: 2px;
+                                    width: 35vw;
+                                }
+                                &.active-anti-shock {
+                                    .decor-line {
+                                        left: 0;
+                                    }
+                                }
+                                &.active-bike-frame {
+                                    .decor-line {
+                                        left: 35vw;
+                                    }
+                                }
+                                &.active-bike-under {
+                                    .decor-line {
+                                        left: 70vw;
+                                    }
+                                }
+                                &.active-water-resistant {
+                                    .decor-line {
+                                        left: 105vw;
+                                    }
+                                }
+                                &.active-bike-engine {
+                                    .decor-line {
+                                        left: 140vw;
+                                    }
+                                }
+                                &.active-bike-wheel {
+                                    .decor-line {
+                                        left: 175vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // Feature Description
+                    .feature-description-list {
+                        height: 22%;
+                        flex-basis: 22%;
+                        .description-list {
+                            .description-item {
+                                padding: 0 6vw;
+                                .description-title {
+                                    font-size: 28px;
+                                    margin: 0 0 15px;
+                                }
+                                .description-desc {
+                                    font-size: 22px;
+                                    margin: 0;
+                                    line-height: 26px;
+                                }
+                            }
+                        }
+                    }
+                    // Feature Image List
+                    .feature-images-list {
+                        height: 60%;
+                        padding: 0 5vw;
+                    }
+                }
+            }
+        }
+        //Screen 480 and bellow
+        @media #{$information-phone} {
+            #yadea-xmen-power-smartkey {
+                // Individual Section Styling
+                // YADEA XMEN POWER
+                #yadea-xmen-power {
+                    height: 40vw;
+                    padding-top: 11vw;
+                    .main-content {
+                        padding: 0 15px;
+                    }
+                }
+                // YADEA XMEN FEATURES
+                #yadea-xmen-features {
+                    justify-content: space-between;
+                    height: 29%;
+                    .features-name-list {
+                        padding-left: 10vw;
+                        height: 12%;
+                        .left-arrow {
+                            height: 5vw;
+                            position: absolute;
+                            left: 3.5vw;
+                            top: 35%;
+                            svg {
+                                height: 100%;
+                                path {
+                                    fill: #fff;
+                                }
+                            }
+                        }
+                        .feature-names {
+                            .feature-item {
+                                width: 35vw;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    // Feature Description
+                    .feature-description-list {
+                        height: 20%;
+                        flex-basis: 20%;
+                        .description-list {
+                            .description-item {
+                                padding: 0 15px;
+                                .description-title {
+                                    font-size: 18px;
+                                    margin: 0 0 10px;
+                                }
+                                .description-desc {
+                                    font-size: 14px;
+                                    margin: 0;
+                                    line-height: 20px;
+                                }
+                            }
+                        }
+                    }
+                    // Feature Image List
+                    .feature-images-list {
+                        height: 65%;
+                        padding: 0 5vw;
+                    }
+                }
+            }
+        }
+        //Screen 360 and bellow
+        @media #{$information-sm-phone} {
+            #yadea-xmen-power-smartkey {
+                // Individual Section Styling
+                // YADEA XMEN POWER
+                #yadea-xmen-power {
+                    height: 40vw;
+                    padding-top: 11vw;
+                    .main-content {
+                        padding: 0 13px;
+                    }
+                }
+                // YADEA XMEN FEATURES
+                #yadea-xmen-features {
+                    .features-name-list {
+                        .feature-names {
+                            .feature-item {
+                                width: 35vw;
+                                font-size: 14px;
+                                margin: 0 -1px;
+                            }
+                        }
+                    }
+                    // Feature Description
+                    .feature-description-list {
+                        height: 20%;
+                        flex-basis: 20%;
+                        .description-list {
+                            .description-item {
+                                padding: 0 15px;
+                                .description-title {
+                                    font-size: 18px;
+                                    margin: 0 0 5px;
+                                }
+                                .description-desc {
+                                    font-size: 14px;
+                                    margin: 0;
+                                    line-height: 20px;
+                                }
+                            }
+                        }
+                    }
+                    // Feature Image List
+                    .feature-images-list {
+                        height: 63%;
+                        padding: 0 6vw;
+                    }
+                }
+            }
+        }
+    }

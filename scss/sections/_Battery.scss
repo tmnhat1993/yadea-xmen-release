@@ -1,0 +1,483 @@
+#yadea-xmen-page {
+    #yadea-xmen-battery {
+        background-color: #0f2467;
+        height: 52vw;
+        .bg-holder {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .effect-holder {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            // Battery Background Layer
+            .battery-layer {
+                position: relative;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+            // Wave Effect Layer
+            .wave-effect-layer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                .effect-circle,
+                .part-circle,
+                .full-circle {
+                    position: absolute;
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+                }
+                .part-circle {
+                    width: 37.55%;
+                    top: 26.85%;
+                    left: 30.6%;
+                    animation: partRotating 12s infinite linear;
+                }
+                .full-circle {
+                    width: 37.4%;
+                    top: 23.7%;
+                    left: 30.7%;
+                    svg {
+                        width: 100%;
+                        height: auto;
+                    }
+                    &.circle-0 {
+                        opacity: 0.35;
+                    }
+                    &.circle-1 {
+                        opacity: 0;
+                        animation: scaling linear infinite 9s;
+                    }
+                    &.circle-2 {
+                        opacity: 0;
+                        animation: scaling linear infinite 9s 3s;
+                    }
+                    &.circle-3 {
+                        opacity: 0;
+                        animation: scaling linear infinite 9s 6s;
+                    }
+                }
+            }
+            // Item Feature Layer
+            .icons-features-layer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                color: $white;
+                .feature-item {
+                    position: absolute;
+                    height: 10%;
+                    .feature-ico,
+                    .feature-detail {
+                        position: absolute;
+                    }
+                    .feature-ico {}
+                    .feature-detail {
+                        width: 100%;
+                        display: flex;
+                        text-align: center;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        .label {
+                            font-size: 18px;
+                        }
+                        .value {
+                            font-size: 28px;
+                            font-weight: 700;
+                        }
+                    }
+                    // Individual Block Styling
+                    &.heat-withstand {
+                        width: 15%;
+                        left: 61%;
+                        top: 22%;
+                        height: 13%;
+                        .feature-ico {
+                            width: 16%;
+                            bottom: 1%;
+                            left: -0.5%;
+                        }
+                        .feature-detail {
+                            width: 90%;
+                            left: 5%;
+                            top: 5%;
+                        }
+                    }
+                    &.charging-time {
+                        width: 13%;
+                        left: 66.2%;
+                        top: 61%;
+                        height: 11%;
+                        .feature-detail {
+                            width: 90%;
+                            left: 8%;
+                        }
+                        .feature-ico {
+                            left: 0;
+                            bottom: 0;
+                            width: 18%;
+                        }
+                    }
+                    &.battery-aging {
+                        width: 13%;
+                        left: 25.6%;
+                        top: 79.5%;
+                        .feature-detail {
+                            width: 86%;
+                            left: 15%;
+                            top: 0;
+                        }
+                        .feature-ico {
+                            width: 19%;
+                            right: 0;
+                            bottom: 0;
+                        }
+                    }
+                    &.charging-no {
+                        left: 20%;
+                        top: 44%;
+                        width: 13%;
+                        height: 12%;
+                        .feature-detail {
+                            width: 86%;
+                            left: 0%;
+                            top: 0;
+                        }
+                        .feature-ico {
+                            bottom: 0;
+                            width: 27%;
+                            right: 1%;
+                        }
+                    }
+                }
+            }
+        }
+        .main-content {
+            position: absolute;
+            width: 1280px;
+            top: 0;
+            left: calc(50% - 640px);
+            padding-top: 78px;
+            padding: 78px 15px 0;
+            z-index: 2;
+        }
+    }
+    /* === RESPONSIVE === */
+    // Screen 1680 and bellow
+    @media #{$information-md-screen} {
+        #yadea-xmen-battery {
+            .effect-holder {
+                // Item Feature Layer
+                .icons-features-layer {
+                    .feature-item {
+                        .feature-detail {
+                            .label {
+                                font-size: 17px;
+                            }
+                            .value {
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                width: 1200px;
+                left: calc(50% - 600px);
+                padding: 70px 10px 0;
+            }
+        }
+    }
+    // Screen 1440 and bellow
+    @media #{$information-sm-screen} {
+        #yadea-xmen-battery {
+            .effect-holder {
+                // Item Feature Layer
+                .icons-features-layer {
+                    .feature-item {
+                        .feature-detail {
+                            .label {
+                                font-size: 16px;
+                            }
+                            .value {
+                                font-size: 23px;
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                width: 1080px;
+                left: calc(50% - 540px);
+                padding: 60px 0 0;
+            }
+        }
+    }
+    // Screen 1280 and bellow
+    @media #{$information-sm-laptop} {
+        #yadea-xmen-battery {
+            .effect-holder {
+                // Item Feature Layer
+                .icons-features-layer {
+                    .feature-item {
+                        .feature-detail {
+                            .label {
+                                font-size: 15px;
+                            }
+                            .value {
+                                font-size: 21px;
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                width: 980px;
+                left: calc(50% - 490px);
+                padding: 50px 0 0;
+            }
+        }
+    }
+    // Screen 1080 and bellow
+    @media #{$information-lg-tablet} {
+        #yadea-xmen-battery {
+            height: 168.75vw;
+            .effect-holder {
+                // Wave Effect Layer
+                .wave-effect-layer {
+                    .part-circle {
+                        width: 77.55%;
+                        top: 44.5%;
+                        left: 11.6%;
+                    }
+                    .full-circle {
+                        width: 77.6%;
+                        top: 42.5%;
+                        left: 11.7%;
+                    }
+                }
+                // Item Feature Layer
+                .icons-features-layer {
+                    .feature-item {
+                        .feature-ico {}
+                        .feature-detail {
+                            .label {
+                                font-size: 18px;
+                            }
+                            .value {
+                                font-size: 24px;
+                            }
+                        }
+                        // Individual Block Styling
+                        &.heat-withstand {
+                            width: 35%;
+                            left: 74%;
+                            top: 40.25%;
+                            height: 10%;
+                            .feature-ico {
+                                width: 16%;
+                                bottom: 1%;
+                                left: -0.5%;
+                            }
+                            .feature-detail {
+                                width: 90%;
+                                left: -20%;
+                                top: 0;
+                            }
+                        }
+                        &.charging-time {
+                            width: 23%;
+                            left: 78.2%;
+                            top: 70%;
+                            height: 9%;
+                            .feature-detail {
+                                width: 90%;
+                                left: -10%;
+                                top: 72%;
+                            }
+                            .feature-ico {
+                                left: 29%;
+                                bottom: auto;
+                                top: 10%;
+                                width: 18%;
+                            }
+                        }
+                        &.battery-aging {
+                            width: 25%;
+                            left: 15.6%;
+                            top: 79.5%;
+                            height: 8%;
+                            .feature-detail {
+                                width: 86%;
+                                left: -30%;
+                                top: 55%;
+                            }
+                            .feature-ico {
+                                bottom: 44%;
+                                width: 21%;
+                                right: 54%;
+                            }
+                        }
+                        &.charging-no {
+                            left: 0;
+                            top: 54%;
+                            width: 34%;
+                            height: 10%;
+                            .feature-detail {
+                                width: 86%;
+                                left: 0%;
+                                top: -24%;
+                            }
+                            .feature-ico {
+                                bottom: 5%;
+                                width: 18%;
+                                right: 51%;
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                width: 100%;
+                top: 0;
+                left: 0;
+                padding: 10vw 30px 0;
+                text-align: center;
+            }
+        }
+    }
+    // Screen 480 and bellow
+    @media #{$information-phone} {
+        #yadea-xmen-battery {
+            .effect-holder {
+                // Wave Effect Layer
+                .wave-effect-layer {
+                    .part-circle {
+                        width: 77.55%;
+                        top: 44.5%;
+                        left: 11.6%;
+                    }
+                    .full-circle {
+                        width: 77.6%;
+                        top: 42.5%;
+                        left: 11.7%;
+                    }
+                }
+                // Item Feature Layer
+                .icons-features-layer {
+                    .feature-item {
+                        .feature-ico {}
+                        .feature-detail {
+                            .label {
+                                font-size: 12px;
+                                white-space: nowrap;
+                            }
+                            .value {
+                                font-size: 16px;
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                width: 100%;
+                top: 0;
+                left: 0;
+                padding: 9vw 15px 0;
+                text-align: center;
+            }
+        }
+    }
+    //Screen 360 and bellow
+    @media #{$information-sm-phone} {
+        #yadea-xmen-battery {
+            .effect-holder {
+                // Item Feature Layer
+                .icons-features-layer {
+                    .feature-item {
+                        .feature-ico {}
+                        .feature-detail {
+                            .label {
+                                font-size: 11px;
+                            }
+                            .value {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+            .main-content {
+                padding: 9vw 13px 0;
+            }
+        }
+    }
+}
+
+@keyframes scaling {
+    0%,
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.35;
+        -webkit-transform: scale(3);
+        transform: scale(3);
+    }
+    99% {
+        opacity: 0;
+        -webkit-transform: scale(6);
+        transform: scale(6);
+    }
+    // 100% {
+    //   opacity: 0;
+    //   -webkit-transform: scale(1);
+    //   transform: scale(1);
+    // }
+}
+
+@keyframes partRotating {
+    0%,
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(-13deg);
+        transform: rotate(-13deg);
+    }
+    50% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    75% {
+        -webkit-transform: rotate(13deg);
+        transform: rotate(13deg);
+    }
+}

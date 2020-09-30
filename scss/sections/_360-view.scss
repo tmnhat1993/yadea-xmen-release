@@ -1,0 +1,532 @@
+#yadea-xmen-page {
+    #yadea-xmen-360-view {
+        background-color: $black;
+        position: relative;
+        width: 100%;
+        height: 49.4vw;
+        * {
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Safari */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Old versions of Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+        }
+        // Bg Layer
+        .bg-holder {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            .bg-item {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+            }
+        }
+        //Main Content Layer
+        .main-content {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            color: $white;
+            padding-top: 3vw;
+            z-index: 5;
+            // Bike Selection
+            .bike-selection {
+                margin: 1vw auto 0;
+                width: 480px;
+                .bike-list {
+                    font-size: 32px;
+                    list-style: none;
+                    line-height: 2.25;
+                    position: relative;
+                    text-align: center;
+                    display: flex;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    .bike-item {
+                        //Original State
+                        opacity: 0.5;
+                        font-weight: 400;
+                        cursor: pointer;
+                        //Variation
+                        &.width-70 {
+                            width: 70%;
+                            flex-basis: 70%;
+                        }
+                        &.width-30 {
+                            width: 30%;
+                            flex-basis: 30%;
+                        }
+                        &.active {
+                            font-weight: 700;
+                            opacity: 1;
+                        }
+                    }
+                    .decor-line {
+                        position: absolute;
+                        width: 100%;
+                        width: 100%;
+                        height: 2px;
+                        background-color: rgba($white, 0.25);
+                        left: 0;
+                        bottom: 0;
+                        .line {
+                            width: 70%;
+                            left: 0;
+                            top: 0;
+                            position: absolute;
+                            height: 2px;
+                            background-color: $white;
+                            transition: all cubic-bezier(0.26, 0.82, 0.51, 1) 350ms;
+                        }
+                        &.active-xmen {
+                            .line {
+                                left: 0;
+                            }
+                        }
+                        &.active-x5 {
+                            .line {
+                                width: 30%;
+                                left: 70%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //Effect Layer
+        .effect-holder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            .ico-360 {
+                display: block;
+                width: 3%;
+                bottom: 4.8%;
+                position: absolute;
+                left: 48.2%;
+            }
+            .ico-360-decor {
+                display: block;
+                width: 60%;
+                bottom: 8%;
+                position: absolute;
+                left: 20%;
+                opacity: 0.1;
+                animation: opacityFade linear 1.5s infinite;
+                img {
+                    width: 100%;
+                }
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 7;
+            }
+            //Name Layer
+            .name-layer {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                // Name layer in the back
+                &.name-layer-back {
+                    z-index: 1;
+                    .name-img {
+                        position: absolute;
+                        &.x5-name {
+                            width: 49%;
+                            left: 24.635%;
+                            top: 23.47%;
+                        }
+                        &.xmen-name {
+                            // display: none;
+                            width: 23%;
+                            left: 46%;
+                            top: 39.8421%;
+                        }
+                    }
+                }
+                //Name Layer in the front
+                &.name-layer-front {
+                    z-index: 3;
+                    .xmen-name {
+                        width: 17%;
+                        position: absolute;
+                        top: 53%;
+                        left: 36%;
+                    }
+                }
+            }
+            // 360 Group Layer
+            .group-360 {
+                width: 48%;
+                top: 22.35%;
+                height: 68.3%;
+                left: 26%;
+                z-index: 2;
+                position: absolute;
+                .images-list {
+                    width: 100%;
+                    height: 100%;
+                    overflow: visible;
+                    position: relative;
+                    .image-item {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        //original state
+                        display: none;
+                        img {
+                            display: block;
+                            width: 100%;
+                        }
+                        &.active {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*=== RESPONSIVE ===*/
+    // Screen 1680 and bellow
+    @media #{$information-md-screen} {
+        #yadea-xmen-360-view {
+            //Main Content Layer
+            .main-content {
+                padding-top: 3vw;
+                z-index: 5;
+                // Bike Selection
+                .bike-selection {
+                    margin: 1vw auto 0;
+                    width: 400px;
+                    .bike-list {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+    // Screen 1440 and bellow
+    @media #{$information-sm-screen} {
+        #yadea-xmen-360-view {
+            //Main Content Layer
+            .main-content {
+                padding-top: 3vw;
+                z-index: 5;
+                // Bike Selection
+                .bike-selection {
+                    margin: 1vw auto 0;
+                    width: 320px;
+                    .bike-list {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+    // Screen 1280 and bellow
+    @media #{$information-sm-laptop} {
+        #yadea-xmen-360-view {
+            //Main Content Layer
+            .main-content {
+                padding-top: 3vw;
+                z-index: 5;
+                // Bike Selection
+                .bike-selection {
+                    width: 300px;
+                    .bike-list {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+    // Screen 1080 and bellow
+    @media #{$information-lg-tablet} {
+        #yadea-xmen-360-view {
+            height: 127vw;
+            //Main Content Layer
+            .main-content {
+                padding: 11vw 30px 0;
+                // Bike Selection
+                .bike-selection {
+                    margin: 1vw auto 0;
+                    width: 70%;
+                    .bike-list {
+                        font-size: 28px;
+                        line-height: 2.25;
+                    }
+                }
+            }
+            //Effect Layer
+            .effect-holder {
+                .ico-360 {
+                    width: 6%;
+                    bottom: 9.75%;
+                    left: 46.2%;
+                }
+                .ico-360-decor {
+                    width: 90%;
+                    bottom: 12%;
+                    left: 5%;
+                }
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 7;
+                }
+                //Name Layer
+                .name-layer {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    // Name layer in the back
+                    &.name-layer-back {
+                        z-index: 1;
+                        .name-img {
+                            position: absolute;
+                            &.x5-name {
+                                width: 90%;
+                                left: 5%;
+                                top: 31.47%;
+                            }
+                            &.xmen-name {
+                                // display: none;
+                                width: 52%;
+                                left: 43%;
+                                top: 41.8421%;
+                            }
+                        }
+                    }
+                    //Name Layer in the front
+                    &.name-layer-front {
+                        .xmen-name {
+                            width: 42%;
+                            top: 54%;
+                            left: 16%;
+                        }
+                    }
+                }
+                // 360 Group Layer
+                .group-360 {
+                    width: 100%;
+                    top: 33.35%;
+                    height: 45.3%;
+                    left: 0;
+                    z-index: 2;
+                    position: absolute;
+                }
+            }
+        }
+    }
+    // Screen 480 and bellow
+    @media #{$information-phone} {
+        #yadea-xmen-360-view {
+            //Main Content Layer
+            .main-content {
+                padding: 11vw 20px 0;
+                // Bike Selection
+                .bike-selection {
+                    margin: 1vw auto 0;
+                    width: 70%;
+                    .bike-list {
+                        font-size: 20px;
+                        line-height: 2;
+                    }
+                }
+            }
+            //Effect Layer
+            .effect-holder {
+                .ico-360 {
+                    width: 6%;
+                    bottom: 9.75%;
+                    left: 46.2%;
+                }
+                .ico-360-decor {
+                    width: 90%;
+                    bottom: 12%;
+                    left: 5%;
+                }
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 7;
+                }
+                //Name Layer
+                .name-layer {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    // Name layer in the back
+                    &.name-layer-back {
+                        z-index: 1;
+                        .name-img {
+                            position: absolute;
+                            &.x5-name {
+                                width: 90%;
+                                left: 5%;
+                                top: 31.47%;
+                            }
+                            &.xmen-name {
+                                // display: none;
+                                width: 52%;
+                                left: 43%;
+                                top: 41.8421%;
+                            }
+                        }
+                    }
+                    //Name Layer in the front
+                    &.name-layer-front {
+                        .xmen-name {
+                            width: 42%;
+                            top: 54%;
+                            left: 16%;
+                        }
+                    }
+                }
+                // 360 Group Layer
+                .group-360 {
+                    width: 100%;
+                    top: 33.35%;
+                    height: 45.3%;
+                    left: 0;
+                    z-index: 2;
+                    position: absolute;
+                }
+            }
+        }
+    }
+    // Screen 360 and bellow
+    @media #{$information-sm-phone} {
+        #yadea-xmen-360-view {
+            //Main Content Layer
+            .main-content {
+                padding: 10vw 13px 0;
+                // Bike Selection
+                .bike-selection {
+                    margin: 1vw auto 0;
+                    width: 70%;
+                    .bike-list {
+                        font-size: 18px;
+                        line-height: 2.25;
+                    }
+                }
+            }
+            //Effect Layer
+            .effect-holder {
+                .ico-360 {
+                    width: 10%;
+                    bottom: 6.5%;
+                    left: 44%;
+                    z-index: 3;
+                }
+                .ico-360-decor {
+                    width: 100%;
+                    bottom: 10.5%;
+                    left: 0;
+                }
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 7;
+                }
+                //Name Layer
+                .name-layer {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    // Name layer in the back
+                    &.name-layer-back {
+                        z-index: 1;
+                        .name-img {
+                            position: absolute;
+                            &.x5-name {
+                                width: 90%;
+                                left: 5%;
+                                top: 31.47%;
+                            }
+                            &.xmen-name {
+                                // display: none;
+                                width: 52%;
+                                left: 43%;
+                                top: 41.8421%;
+                            }
+                        }
+                    }
+                    //Name Layer in the front
+                    &.name-layer-front {
+                        .xmen-name {
+                            width: 42%;
+                            top: 54%;
+                            left: 16%;
+                        }
+                    }
+                }
+                // 360 Group Layer
+                .group-360 {
+                    width: 100%;
+                    top: 33.35%;
+                    height: 45.3%;
+                    left: 0;
+                    z-index: 2;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+@keyframes opacityFade {
+    0%,
+    100% {
+        opacity: 0.1;
+        -webkit-transform: scale(1.01);
+        transform: scale(1.01);
+    }
+    50% {
+        opacity: 0.6;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}

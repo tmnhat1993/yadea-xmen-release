@@ -1,0 +1,21 @@
+$main-color: #f36d21;
+$white: #fff;
+$black: #000;
+
+/* =======================================
+ * RESPONSIVE MARK
+ /* ======================================= */
+
+$information-screen: "only screen and (max-width : 1920px)";
+$information-md-screen: "only screen and (max-width : 1680px)";
+$information-sm-screen: "only screen and (max-width : 1440px)";
+$information-laptop: "only screen and (max-width : 1368px)";
+$information-sm-laptop: "only screen and (max-width : 1280px)";
+$information-lg-tablet: "only screen and (max-width : 1024px)";
+$information-tablet: "only screen and (max-width : 768px)";
+$information-phone: "only screen and (max-width : 480px)";
+$information-sm-phone: "only screen and (max-width : 375px)";
+
+/* USAGE */
+
+@media #{$information-sm-laptop} {}

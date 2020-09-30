@@ -1,0 +1,463 @@
+#yadea-xmen-page {
+    #yadea-xmen-comparision {
+        padding-top: 70px;
+        background: linear-gradient(#fff, #fdfdfd);
+        .comparision-layout {
+            padding: 20px 0 80px;
+            .heading {
+                margin-bottom: 30px;
+                .aspect-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    width: 800px;
+                    margin: auto;
+                    position: relative;
+                    .aspect-item {
+                        font-size: 20px;
+                        line-height: 2.25;
+                        width: 33.33%;
+                        flex-basis: 33.33%;
+                        text-align: center;
+                        color: #919191;
+                        cursor: pointer;
+                        transition: all ease-in 150ms;
+                        &.active {
+                            transition: all ease-out 150ms;
+                            color: #333;
+                            font-weight: 700;
+                        }
+                    }
+                    .aspect-decor {
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        background-color: rgba($black, 0.2);
+                        bottom: 0;
+                        .decor-line {
+                            width: 20%;
+                            top: 0;
+                            height: 2px;
+                            position: absolute;
+                            background-color: $black;
+                            transition: all cubic-bezier(0.26, 0.82, 0.51, 1) 350ms;
+                        }
+                        &.size-active {
+                            .decor-line {
+                                left: 0;
+                            }
+                        }
+                        &.frame-active {
+                            .decor-line {
+                                left: 20%;
+                            }
+                        }
+                        &.engine-active {
+                            .decor-line {
+                                left: 40%;
+                            }
+                        }
+                        &.performance-active {
+                            .decor-line {
+                                left: 60%;
+                            }
+                        }
+                        &.utils-active {
+                            .decor-line {
+                                left: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+            .layout-body {
+                width: 1100px;
+                margin: auto;
+                max-width: 100%;
+                margin-top: 100px;
+                position: relative;
+                &:after {
+                    content: "";
+                    width: 2px;
+                    background-color: #ebebeb;
+                    height: 100%;
+                    left: 25%;
+                    top: 0;
+                    position: absolute;
+                }
+                &:before {
+                    content: "";
+                    width: 2px;
+                    background-color: #ebebeb;
+                    height: 100%;
+                    left: 65%;
+                    top: 0;
+                    position: absolute;
+                }
+                .row {
+                    width: 100%;
+                    .sub-row {
+                        display: grid;
+                        width: 100%;
+                        grid-template-columns: 3fr 3fr 1fr 3fr;
+                    }
+                    &.head-row {
+                        .product-img {
+                            padding: 0 30px;
+                            &.xmen-img {
+                                grid-column: 2 / span 1;
+                            }
+                            &.x5-img {
+                                grid-column: 4 / span 1;
+                            }
+                        }
+                    }
+                    &.aspect-row {
+                        padding: 20px 0;
+                        color: #757575;
+                        line-height: 2.25;
+                        font-size: 18px;
+                        position: relative;
+                        z-index: 3;
+                        // Original State
+                        display: none;
+                        &.active {
+                            display: block;
+                        }
+                        .sub-row {
+                            border-bottom: 2px solid #c8c8c8;
+                        }
+                        .label {
+                            grid-column: 1 / span 1;
+                            font-weight: 700;
+                            line-height: 3.5;
+                            margin: 0;
+                        }
+                        .value-1 {
+                            grid-column: 2 / span 1;
+                            text-align: center;
+                            line-height: 3.5;
+                            margin: 0;
+                        }
+                        .value-2 {
+                            grid-column: 4 / span 1;
+                            text-align: center;
+                            line-height: 3.5;
+                            margin: 0;
+                        }
+                    }
+                    &.cta-row {
+                        text-align: center;
+                        .cta-holder {
+                            .buynow-btn {
+                                cursor: pointer;
+                                text-transform: uppercase;
+                                font-size: 18px;
+                                color: $white;
+                                line-height: 2;
+                                border-radius: 10px;
+                                border: 3px solid $white;
+                                outline: none;
+                                position: relative;
+                                background-color: $main-color;
+                                padding: 0 20px;
+                                transition: all ease-in 150ms;
+                                white-space: nowrap;
+                                &:hover {
+                                    border-color: lighten($main-color, 35%);
+                                    transition: all ease-out 220ms;
+                                }
+                            }
+                            &.cta-xmen {
+                                grid-column: 2 / span 1;
+                            }
+                            &.cta-x5 {
+                                grid-column: 4 / span 1;
+                            }
+                            .arrow-ico {
+                                margin-left: 0px;
+                                svg {
+                                    height: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-sm-screen} {
+        #yadea-xmen-comparision {
+            padding-top: 55px;
+            .comparision-layout {
+                padding: 15px 0 70px;
+                .heading {
+                    margin-bottom: 10px;
+                    .aspect-list {
+                        width: 720px;
+                        .aspect-item {
+                            font-size: 18px;
+                        }
+                    }
+                }
+                .layout-body {
+                    width: 1000px;
+                    margin-top: 70px;
+                    .row {
+                        &.aspect-row {
+                            padding: 18px 0;
+                            color: #757575;
+                            font-size: 16px;
+                        }
+                        &.cta-row {
+                            .cta-holder {
+                                .buynow-btn {
+                                    font-size: 17px;
+                                    border-radius: 8px;
+                                    border: 3px solid $white;
+                                    padding: 0 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* === RESPONSIVE === */
+    @media #{$information-lg-tablet} {
+        #yadea-xmen-comparision {
+            padding-top: 11vw;
+            .comparision-layout {
+                padding: 20px 0 80px;
+                .heading {
+                    margin-bottom: 30px;
+                    .aspect-list {
+                        width: 90%;
+                        .aspect-item {
+                            font-size: 18px;
+                        }
+                    }
+                }
+                .layout-body {
+                    width: 100%;
+                    margin: auto;
+                    max-width: 100%;
+                    margin-top: 7vw;
+                    position: relative;
+                    &:after {
+                        display: none;
+                    }
+                    &:before {
+                        display: none;
+                    }
+                    .row {
+                        width: 100%;
+                        .sub-row {
+                            display: grid;
+                            width: 100%;
+                            grid-template-columns: 1fr 1fr;
+                        }
+                        &.head-row {
+                            margin: 0;
+                            .product-img {
+                                padding: 0 20px;
+                                &.xmen-img {
+                                    grid-column: 1 / span 1;
+                                }
+                                &.x5-img {
+                                    grid-column: 2 / span 1;
+                                }
+                            }
+                        }
+                        &.aspect-row {
+                            padding: 20px 30px;
+                            line-height: 2.25;
+                            font-size: 18px;
+                            z-index: 3;
+                            margin: 0;
+                            // Original State
+                            display: none;
+                            &.active {
+                                display: block;
+                            }
+                            .sub-row {
+                                border-bottom: 2px solid #c8c8c8;
+                            }
+                            .label {
+                                grid-column: 1 / span 2;
+                                font-weight: 700;
+                                line-height: 3.5;
+                                margin: 0;
+                                text-align: center;
+                                border-bottom: 2px solid #c8c8c8;
+                                margin-top: 20px;
+                            }
+                            .value-1 {
+                                grid-column: 1 / span 1;
+                                text-align: center;
+                                line-height: 3.5;
+                                margin: 0;
+                                border-right: 1px solid #c8c8c8;
+                            }
+                            .value-2 {
+                                grid-column: 2 / span 1;
+                                text-align: center;
+                                line-height: 3.5;
+                                margin: 0;
+                            }
+                        }
+                        &.cta-row {
+                            text-align: center;
+                            .cta-holder {
+                                .buynow-btn {
+                                    cursor: pointer;
+                                    text-transform: uppercase;
+                                    font-size: 18px;
+                                    color: $white;
+                                    line-height: 2;
+                                    border-radius: 10px;
+                                    border: 3px solid $white;
+                                    outline: none;
+                                    position: relative;
+                                    background-color: $main-color;
+                                    padding: 0 20px;
+                                    transition: all ease-in 150ms;
+                                    white-space: nowrap;
+                                    &:hover {
+                                        border-color: lighten($main-color, 35%);
+                                        transition: all ease-out 220ms;
+                                    }
+                                }
+                                &.cta-xmen {
+                                    grid-column: 1 / span 1;
+                                }
+                                &.cta-x5 {
+                                    grid-column: 2 / span 1;
+                                }
+                                .arrow-ico {
+                                    margin-left: 0px;
+                                    svg {
+                                        height: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-phone} {
+        #yadea-xmen-comparision {
+            .comparision-layout {
+                padding: 20px 0 80px;
+                .heading {
+                    margin-bottom: 0;
+                    .aspect-list {
+                        width: calc(100% - 30px);
+                        .aspect-item {
+                            font-size: 11px;
+                        }
+                    }
+                }
+                .layout-body {
+                    .row {
+                        &.head-row {
+                            .product-img {
+                                padding: 0 13px;
+                            }
+                        }
+                        &.aspect-row {
+                            padding: 10px 15px;
+                            line-height: 2.25;
+                            font-size: 13px;
+                            z-index: 3;
+                            .label {
+                                margin-top: 8px;
+                            }
+                            .value-1,
+                            .value-2 {
+                                line-height: 3;
+                            }
+                        }
+                        &.cta-row {
+                            .cta-holder {
+                                .buynow-btn {
+                                    font-size: 13px;
+                                    font-weight: 700;
+                                    line-height: 2;
+                                    border-radius: 6px;
+                                    padding: 0 12px;
+                                }
+                                .arrow-ico {
+                                    margin-left: 2px;
+                                    svg {
+                                        height: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media #{$information-sm-phone} {
+        #yadea-xmen-comparision {
+            .comparision-layout {
+                padding: 20px 0 80px;
+                .heading {
+                    margin-bottom: 0;
+                    .aspect-list {
+                        width: calc(100% - 26px);
+                        .aspect-item {
+                            font-size: 10px;
+                        }
+                    }
+                }
+                .layout-body {
+                    .row {
+                        &.head-row {
+                            .product-img {
+                                padding: 0 13px;
+                            }
+                        }
+                        &.aspect-row {
+                            padding: 10px 15px;
+                            line-height: 2.25;
+                            font-size: 11px;
+                            z-index: 3;
+                            .label {
+                                margin-top: 5px;
+                            }
+                            .value-1,
+                            .value-2 {
+                                line-height: 2.75;
+                            }
+                        }
+                        &.cta-row {
+                            .cta-holder {
+                                .buynow-btn {
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    line-height: 2;
+                                    border-radius: 5px;
+                                    padding: 0 10px;
+                                }
+                                .arrow-ico {
+                                    margin-left: 2px;
+                                    svg {
+                                        height: 9px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
